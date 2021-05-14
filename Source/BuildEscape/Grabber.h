@@ -28,15 +28,19 @@ protected:
 
 private:
 
+	//Variables
 	float Reach = 100.f;
 
+	UPROPERTY();
 	UPhysicsHandleComponent* PhysicsHandle = nullptr;
-
+	UPROPERTY();
 	UInputComponent* InputComponent = nullptr;
-
+	//Functions
 	void Grab();
 	void Release();
 	void FindPhysicsHandle();
 	void SetupInputComponent();
 	FHitResult GetFirstPhysicsBodyInReach() const;
+	FVector GetLineTraceEnd() const;
+	FVector GetPlayersWorldPos() const;
 };
